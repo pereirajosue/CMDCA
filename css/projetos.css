@@ -15,7 +15,7 @@ p {
     /*esse p define a cor do texto*/
 }
 
-img {
+.imagens {
     width: 600px;
     height: 300px;
     margin-left: 20px;
@@ -26,7 +26,7 @@ img {
     width: 600px;
     height: 220px;
     background-color: #7F3FBF;
-    margin-top: -25px;
+    margin-top: 25px;
     margin-left: 20px;
     /*essa div e que vale ao Primeiro texto do projeto "a arte de previnir"*/
 }

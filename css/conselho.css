@@ -83,3 +83,9 @@ h3 {
 .float {
     float: left;
 }
+
+.center {
+    text-align: center;
+    /*imagem cmdca*/
+    margin-top: -120px;
+}

@@ -5,11 +5,11 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/calendario.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/cmdca.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
     <title>Calendario</title>
 </head>
 
-<body>
+<body onload="renderDate()">
     <div>
         <div class="pessoa">
             <a href="login.html">
@@ -17,7 +17,9 @@
                 <br>Acesso Restrito
             </a>
             <div class="center">
-                <img src="imagens/cmdca.jpeg" id="largura" />
+                <a href="index.html">
+                    <img src="imagens/cmdca.jpeg" id="largura" />
+                </a>
             </div>
         </div>
         <div>
@@ -27,7 +29,6 @@
             </div>
         </div>
         <div class="navbar">
-            <a href="cmdca.html">Pagina Inicial</a>
             <a href="noticia.html">Nóticias</a>
             <div class=" dropdown ">
                 <button class="dropbtn ">Sobre Nós
@@ -43,7 +44,7 @@
                 <button class="dropbtn ">Finanças 
                             </button>
                 <div class="dropdown-content ">
-                    <a href="doaçoes.html">Como Doar</a>
+                    <a href="doacoes.html">Como Doar</a>
                 </div>
             </div>
             <div class="dropdown ">
@@ -62,133 +63,101 @@
                 </div>
             </div>
             <div>
-                <a href="eleições.html ">Eleições</a>
+                <a href="eleicoes.html ">Eleições</a>
             </div>
             <div>
                 <a href="contato.html ">Contato</a>
             </div>
-            <div class="top ">
-                <label for=" ">Pesquisar</label>
-                <input type="text " name="text " placeholder="Digite o que procura... ">
+            <div class="top">
+                <label for="busca">Buscar</label>
+                <input type="search" id="busca" name="q" class="input-button">
+                <button type="submit" class="button">Pesquisar</button>
             </div>
-        </div>
-        <br><br><br><br>
-        <table class="div">
-            <div>
-                <caption class="mes">Outubro 2019</caption>
+            <div class="wrapper">
+                <div class="calendar">
+                    <div class="month">
+                        <div class="prev" onclick="moveDate('prev')">
+                            <span>&#10094;</span>
+                        </div>
+                        <div>
+                            <h2 id="month"></h2>
+                            <p id="date_str"></p>
+                        </div>
+                        <div class="next" onclick="moveDate('next')">
+                            <span>&#10095;</span>
+                        </div>
+                    </div>
+                    <div class="weekdays">
+                        <div>Dom</div>
+                        <div>Seg</div>
+                        <div>Ter</div>
+                        <div>Qua</div>
+                        <div>Qui</div>
+                        <div>Sex</div>
+                        <div>Sab</div>
+                    </div>
+                    <div class="days">
+
+                    </div>
+                </div>
             </div>
-            <br>
-            <thead>
+            <script>
+                var dt = new Date();
 
-                <tr>
+                function renderDate() {
+                    dt.setDate(1);
+                    var day = dt.getDay();
+                    var today = new Date();
+                    var endDate = new Date(
+                        dt.getFullYear(),
+                        dt.getMonth() + 1,
+                        0
+                    ).getDate();
 
-                    <td class="dia">
-                        <div class="semana">D</td>
+                    var prevDate = new Date(
+                        dt.getFullYear(),
+                        dt.getMonth(),
+                        0
+                    ).getDate();
+                    var months = [
+                        "Janeiro",
+                        "Fevereiro",
+                        "Março",
+                        "Abril",
+                        "Maio",
+                        "Junho",
+                        "Julho",
+                        "Agosto",
+                        "Setembro",
+                        "Outubro",
+                        "Novembro",
+                        "Dezembro"
+                    ]
+                    document.getElementById("month").innerHTML = months[dt.getMonth()];
+                    // document.getElementById("date_str").innerHTML = dt.toDateString();
+                    var cells = "";
+                    for (x = day; x > 0; x--) {
+                        cells += "<div class='prev_date'>" + (prevDate - x + 1) + "</div>";
+                    }
+                    console.log(day);
+                    for (i = 1; i <= endDate; i++) {
+                        if (i == today.getDate() && dt.getMonth() == today.getMonth()) cells += "<div class='today'>" + i + "</div>";
+                        else
+                            cells += "<div>" + i + "</div>";
+                    }
+                    document.getElementsByClassName("days")[0].innerHTML = cells;
 
-                    <td class="dia">
-                        <div class="semana">S</td>
+                }
 
-                    <td class="dia">
-                        <div class="semana">T</td>
-
-                    <td class="dia">
-                        <div class="semana">Q</td>
-
-                    <td class="dia">
-                        <div class="semana">Q</td>
-
-                    <td class="dia">
-                        <div class="semana">S</td>
-
-                    <td class="dia">
-                        <div class="semana">S</td>
-
-                </tr>
-
-            </thead>
-
-            <tbody>
-
-                <tr>
-
-                    <td class="dia">1<span class="evento">Reunião...</span></td>
-
-                    <td class="dia">2<span class="evento">Atividade...</span></td>
-
-                    <td class="dia">3<span class="evento">Evento...</span></td>
-
-                    <td class="dia">4</td>
-
-                    <td class="dia">5<span class="evento">Reunião...</span></td>
-
-                    <td class="dia">6</td>
-
-                    <td class="dia">7</td>
-
-                </tr>
-
-                <tr>
-
-                    <td class="dia">8<span class="evento">Atividade...</span></td>
-
-                    <td class="dia">9</td>
-
-                    <td class="dia">10</td>
-
-                    <td class="dia">11<span class="evento">Reunião...</span></td>
-
-                    <td class="dia">12</td>
-
-                    <td class="dia">13<span class="evento">Evento...</span></td>
-
-                    <td class="dia">14</td>
-
-                </tr>
-
-                <tr>
-
-                    <td class="dia">15<span class="evento">Reunião...</span></td>
-
-                    <td class="dia">16</td>
-
-                    <td class="dia">17</td>
-
-                    <td class="dia">18<span class="evento">Evento...</span></td>
-
-                    <td class="dia">19</td>
-
-                    <td class="dia">20<span class="evento">Reunião...</span></td>
-
-                    <td class="dia">21</td>
-
-                </tr>
-
-                <tr>
-
-                    <td class="dia">22<span class="evento">Atividade...</span></td>
-
-                    <td class="dia">23</td>
-
-                    <td class="dia">24</td>
-
-                    <td class="dia">25<span class="evento">Atividade...</span></td>
-
-                    <td class="dia">26</td>
-
-                    <td class="dia">27<span class="evento">Reunião...</span></td>
-
-                    <td class="dia">28</td>
-
-                </tr>
-            </tbody>
-
-        </table>
-        <br>
-        <div>
-            <button id="buttonazul">
-                    <a href="cmdca.html">Voltar</a>
-                </button>
-        </div>
+                function moveDate(para) {
+                    if (para == "prev") {
+                        dt.setMonth(dt.getMonth() - 1);
+                    } else if (para == 'next') {
+                        dt.setMonth(dt.getMonth() + 1);
+                    }
+                    renderDate();
+                }
+            </script>
 </body>
 
 </html>

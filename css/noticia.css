@@ -8,7 +8,7 @@
 }
 
 .div1 {
-    position: relative;
+    position: absolute;
     left: 80px;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .div2 {
-    position: relative;
+    position: absolute;
     left: 480px;
     top: -410px;
 }
@@ -45,7 +45,7 @@
 }
 
 .div3 {
-    position: relative;
+    position: absolute;
     left: 870px;
     top: -790px;
 }
@@ -59,7 +59,7 @@
 }
 
 .bot {
-    position: relative;
+    position: absolute;
     left: 570px;
     top: -770px;
 }

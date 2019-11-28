@@ -5,7 +5,7 @@
     <title>crianças e adolescentes</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/criancas.css">
-    <link rel="stylesheet" type="text/css" href="css/cmdca.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
     <!--Conexão do html com o CSS-->
 </head>
 
@@ -17,7 +17,9 @@
                 <br>Acesso Restrito
             </a>
             <div class="center">
-                <img src="imagens/cmdca.jpeg" id="largura" />
+                <a href="index.html">
+                    <img src="imagens/cmdca.jpeg" id="largura" />
+                </a>
             </div>
         </div>
         <div>
@@ -27,7 +29,6 @@
             </div>
         </div>
         <div class="navbar">
-            <a href="cmdca.html">Pagina Inicial</a>
             <a href="noticia.html">Nóticias</a>
             <div class=" dropdown ">
                 <button class="dropbtn ">Sobre Nós
@@ -43,8 +44,7 @@
                 <button class="dropbtn ">Finanças 
                                     </button>
                 <div class="dropdown-content ">
-                    <a href="# ">Como Doar</a>
-                    <a href="# ">Funcionalidade</a>
+                    <a href="doacoes.html">Como Doar</a>
                 </div>
             </div>
             <div class="dropdown ">
@@ -63,14 +63,15 @@
                 </div>
             </div>
             <div>
-                <a href="eleições.html ">Eleições</a>
+                <a href="eleicoes.html ">Eleições</a>
             </div>
             <div>
                 <a href="contato.html ">Contato</a>
             </div>
-            <div class="top ">
-                <label for=" ">Pesquisar</label>
-                <input type="text " name="text " placeholder="Digite o que procura... ">
+            <div class="top">
+                <label for="busca">Buscar</label>
+                <input type="search" id="busca" name="q" class="input-button">
+                <button type="submit" class="button">Pesquisar</button>
             </div>
         </div>
         <h1>Crianças e Adolescentes</h1>

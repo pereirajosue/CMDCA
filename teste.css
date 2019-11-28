@@ -1,0 +1,23 @@
+#login {
+    width: 30px;
+    /*acesso restrito*/
+    height: 30px;
+}
+
+.margin-login {
+    /*acesso restrito*/
+    width: 30px;
+    height: 30px;
+}
+
+#index {
+    /*imagem cmdca*/
+    height: 200px;
+    width: 300px;
+}
+
+.center {
+    /*imagem cmdca*/
+    text-align: center;
+    margin-top: -120px;
+}

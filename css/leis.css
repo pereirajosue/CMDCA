@@ -1,15 +1,35 @@
-img.cm {
+.top {
+    margin: top;
+}
+
+.b {
+    float: right;
+    margin: 0 0 10px 10px;
+}
+
+.cmdca {
     top: 50%;
-    right: 0;
     height: 300px;
 }
 
-.c {
-    margin-top: -270px;
+.lado {
+    text-align: left;
 }
 
-h2 {
-    text-align: center;
+
+/*imagem do cmdca ao centro*/
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+}
+
+
+/*cor dos links*/
+
+.esquerda {
+    margin-top: -270px;
 }
 
 
